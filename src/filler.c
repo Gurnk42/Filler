@@ -27,11 +27,17 @@ static void	ft_ai(t_env *e)
 					y_p = n / e->p_y;
 
 					x_b = i % e->b_x;
-					y_b = i / e->b_y - 1;
+					y_b = (i / e->b_y) - 3;
 					ft_putchar_fd('\n', 2);
 					ft_putnbr_fd(x_b, 2);
 					ft_putchar_fd('\n', 2);
 					ft_putnbr_fd(y_b, 2);
+					ft_putchar_fd('\n', 2);
+					ft_putchar_fd('\n', 2);
+					ft_putnbr_fd(x_p, 2);
+					ft_putchar_fd('\n', 2);
+					ft_putnbr_fd(y_p, 2);
+					ft_putchar_fd('\n', 2);
 					break ;
 				}
 				n++;
