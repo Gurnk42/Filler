@@ -25,6 +25,7 @@ INC_DIR = ./inc/
 OBJ_DIR = ./obj/
 
 SRC_FILES =	filler.c \
+			ai.c \
 			get_next_line.c
 
 OBJ_FILES = $(SRC_FILES:.c=.o)
