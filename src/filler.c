@@ -21,7 +21,7 @@ static int	ft_test_placement(int i, int n, t_env *e)
 	y_i = i / e->b_x;
 
 	c = 0;
-	ft_putstr_fd("I == ", 2);
+/*	ft_putstr_fd("I == ", 2);
 	ft_putnbr_fd(i, 2);
 	ft_putchar_fd('\n', 2);
 	ft_putstr_fd("N == ", 2);
@@ -32,13 +32,15 @@ static int	ft_test_placement(int i, int n, t_env *e)
 	ft_putchar_fd('\n', 2);
 	ft_putstr_fd("N center Y == ", 2);
 	ft_putnbr_fd(y_center, 2);
-	ft_putchar_fd('\n', 2);
+	ft_putchar_fd('\n', 2);*/
 	while ((e->piece)[c])
 	{
 		if ((e->piece)[c] == '*')
 		{
 			x_pos = x_i + ((c % e->p_x) - x_center);
 			y_pos = y_i + ((c / e->p_x) - y_center);
+/*			ft_putstr_fd("___________________________", 2);
+			ft_putchar_fd('\n', 2);
 			ft_putstr_fd("pos of each *:\nY:  ", 2);
 			ft_putnbr_fd(y_pos, 2);
 			ft_putchar_fd('\n', 2);
@@ -47,26 +49,30 @@ static int	ft_test_placement(int i, int n, t_env *e)
 			ft_putchar_fd('\n', 2);
 			ft_putstr_fd("CONTENT POS in grid *:\n:  ", 2);
 			ft_putnbr_fd((y_pos * e->b_x) + x_pos, 2);
-			ft_putchar_fd('\n', 2);
+			ft_putchar_fd('\n', 2);*/
 			if (i < 0)
 				return (0);
 			if ((pos_content = (e->map)[(y_pos * e->b_x) + x_pos]) != '.')
 			{
 				if (pos_content == e->letter)
+				{
 					touch++;
-				if (touch > 1)
+					if (touch > 1)
+						return (0);
+				}
+				else
 					return (0);
 			}
 		}
 		c++;
 	}
 
-	ft_putchar_fd('\n', 2);
+/*	ft_putchar_fd('\n', 2);
 	ft_putnbr_fd(x_center, 2);
 	ft_putchar_fd('\n', 2);
 	ft_putnbr_fd(y_center, 2);
 	ft_putchar_fd('\n', 2);
-	ft_putchar_fd('\n', 2);
+	ft_putchar_fd('\n', 2);*/
 	return (1);
 }
 
@@ -97,8 +103,9 @@ static void	ft_ai(t_env *e)
 					y_p = n / e->p_x;
 
 					x_b = i % e->b_x;
-					y_b = (i / e->b_x);
-					ft_putstr_fd("n offset:\nX:  ", 2);
+					y_b = i / e->b_x;
+
+					/*ft_putstr_fd("n offset:\nX:  ", 2);
 					ft_putnbr_fd(x_p, 2);
 					ft_putchar_fd('\n', 2);
 					ft_putstr_fd("n offset:\nY:  ", 2);
@@ -109,16 +116,6 @@ static void	ft_ai(t_env *e)
 					ft_putchar_fd('\n', 2);
 					ft_putstr_fd("HEIGHT:\n  ", 2);
 					ft_putnbr_fd(e->p_y, 2);
-					ft_putchar_fd('\n', 2);
-					/*ft_putchar_fd('\n', 2);
-					ft_putnbr_fd(x_b, 2);
-					ft_putchar_fd('\n', 2);
-					ft_putnbr_fd(y_b, 2);
-					ft_putchar_fd('\n', 2);
-					ft_putchar_fd('\n', 2);
-					ft_putnbr_fd(x_p, 2);
-					ft_putchar_fd('\n', 2);
-					ft_putnbr_fd(y_p, 2);
 					ft_putchar_fd('\n', 2);*/
 					if ((ret = ft_test_placement(i, n, e)) == 1)
 						break ;
@@ -130,8 +127,14 @@ static void	ft_ai(t_env *e)
 		}
 		i++;
 	}
-	x = x_p + x_b;
-	y = y_p + y_b;
+	ft_putstr_fd("n offset:\nX:  ", 2);
+	ft_putnbr_fd(x_p, 2);
+	ft_putchar_fd('\n', 2);
+	ft_putstr_fd("n offset:\nY:  ", 2);
+	ft_putnbr_fd(y_p, 2);
+	ft_putchar_fd('\n', 2);
+	x = x_b - x_p;
+	y = y_b - y_p;
 	ft_putnbr(y);
 	ft_putchar(' ');
 	ft_putnbr(x);
