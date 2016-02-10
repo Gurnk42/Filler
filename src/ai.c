@@ -28,7 +28,7 @@ int		ft_test_placement(int i, int n, t_env *e)
 				return (0);
 			if ((pos_content = (e->map)[(y_pos * e->b_x) + x_pos]) != '.')
 			{
-				if (pos_content == e->letter)
+				if (pos_content == e->letter || pos_content == e->letter + 32)
 				{
 					touch++;
 					if (touch > 1)
@@ -37,7 +37,6 @@ int		ft_test_placement(int i, int n, t_env *e)
 				else
 					return (0);
 			}
-
 		}
 		c++;
 	}
@@ -60,7 +59,7 @@ void	ft_ai(t_env *e)
 	ret = -1;
 	while ((e->map)[i])
 	{
-		if ((e->map)[i] == e->letter)
+		if ((e->map)[i] == e->letter || (e->map)[i] == e->letter + 32)
 		{
 			n = 0;
 			while ((e->piece)[n])
