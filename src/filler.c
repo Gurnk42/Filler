@@ -121,8 +121,12 @@ static void	ft_ai(t_env *e)
 					ft_putstr_fd("HEIGHT:\n  ", 2);
 					ft_putnbr_fd(e->p_y, 2);
 					ft_putchar_fd('\n', 2);*/
-					if ((ret = ft_test_placement(i, n, e)) == 1)
+					if (((ret = ft_test_placement(i, n, e)) == 1)
+							&& ((x_b - x_p) >= 0)
+							&& ((y_b - y_p) >= 0))
 						break ;
+					else
+						ret = 0;
 				}
 				n++;
 			}
