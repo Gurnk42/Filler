@@ -13,7 +13,8 @@ static void	ft_get_board(t_env *e)
 	{
 		get_next_line(0, &str);
 		if (i != 0)
-			e->map = ft_strjoin_free(e->map, (split = ft_strsplit(str, ' '))[1]);
+			e->map = ft_strjoin_free(e->map,
+				(split = ft_strsplit(str, ' '))[1]);
 		i++;
 	}
 }

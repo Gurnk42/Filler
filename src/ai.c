@@ -72,7 +72,9 @@ void	ft_ai(t_env *e)
 					y_b = i / e->b_x;
 					if (((ret = ft_test_placement(i, n, e)) == 1)
 							&& ((x_b - x_p) >= 0)
-							&& ((y_b - y_p) >= 0))
+							&& ((y_b - y_p) >= 0)
+							&& ((x_b - x_p) + e->p_x < e->b_x)
+							&& ((y_b - y_p) + e->p_y < e->b_y))
 						break ;
 					else
 						ret = 0;
