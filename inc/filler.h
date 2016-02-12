@@ -27,6 +27,19 @@ typedef struct	s_placement
 	char	pos_content;
 }				t_placement;
 
+typedef struct	s_ai
+{
+	int		x_b;
+	int		y_b;
+	int		x_p;
+	int		y_p;
+	int		i;
+	int		n;
+	int		x;
+	int		y;
+	int		ret;
+}				t_ai;
+
 /*
 ** ai.c
 */
