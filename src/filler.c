@@ -6,7 +6,7 @@
 /*   By: ebouther <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/12 18:51:36 by ebouther          #+#    #+#             */
-/*   Updated: 2016/02/12 18:51:39 by ebouther         ###   ########.fr       */
+/*   Updated: 2016/02/12 19:27:37 by ebouther         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,8 @@ static void	ft_get_board(t_env *e)
 
 static void	ft_get_piece(t_env *e)
 {
-	char *str;
-	int	i;
+	char	*str;
+	int		i;
 
 	i = 0;
 	ft_strdel(&(e->piece));
@@ -75,7 +75,7 @@ static void	ft_get_map(t_env *e)
 	}
 }
 
-int	main(void)
+int			main(void)
 {
 	t_env env;
 

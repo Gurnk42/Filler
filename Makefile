@@ -25,11 +25,10 @@ INC_DIR = ./inc/
 OBJ_DIR = ./obj/
 
 SRC_FILES =	filler.c \
-			ai.c \
-			get_next_line.c
+			ai.c
 
 OBJ_FILES = $(SRC_FILES:.c=.o)
-INC_FILES = filler.h get_next_line.h
+INC_FILES = filler.h
 
 SRC = $(addprefix $(SRC_DIR), $(SRC_FILES))
 OBJ = $(addprefix $(OBJ_DIR), $(OBJ_FILES))

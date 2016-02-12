@@ -1,6 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   filler.h                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ebouther <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/02/12 19:26:23 by ebouther          #+#    #+#             */
+/*   Updated: 2016/02/12 19:51:05 by ebouther         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef FILLER_H
 # define FILLER_H
-# include "get_next_line.h"
 # include "libft.h"
 
 typedef struct	s_env
@@ -43,8 +54,7 @@ typedef struct	s_ai
 /*
 ** ai.c
 */
-int		ft_test_placement(int i, int n, t_env *e);
-void	ft_ai(t_env *e);
-
+int				ft_test_placement(int i, int n, t_env *e);
+void			ft_ai(t_env *e);
 
 #endif
