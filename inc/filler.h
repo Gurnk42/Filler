@@ -6,7 +6,7 @@
 /*   By: ebouther <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/12 19:26:23 by ebouther          #+#    #+#             */
-/*   Updated: 2016/02/12 19:51:05 by ebouther         ###   ########.fr       */
+/*   Updated: 2016/02/12 20:37:49 by ebouther         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,10 @@ typedef struct	s_ai
 ** ai.c
 */
 int				ft_test_placement(int i, int n, t_env *e);
+void			ft_free_split(char **s);
 void			ft_ai(t_env *e);
+void			ft_get_vm_data(char **str, t_env *e);
+void			ft_get_board(t_env *e);
+void			ft_get_piece(t_env *e);
 
 #endif
