@@ -6,7 +6,7 @@
 /*   By: ebouther <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/12 18:51:36 by ebouther          #+#    #+#             */
-/*   Updated: 2016/02/12 20:32:03 by ebouther         ###   ########.fr       */
+/*   Updated: 2016/02/14 20:37:02 by ebouther         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,6 @@ void		ft_get_board(t_env *e)
 		{
 			e->map = ft_strjoin_free(e->map,
 				(split = ft_strsplit(str, ' '))[1]);
-			if (split != NULL)
-				ft_free_split(&split);
 		}
 		i++;
 	}
@@ -60,9 +58,9 @@ static void	ft_get_map(t_env *e)
 	str = NULL;
 	while (get_next_line(0, &str))
 	{
-		if (ft_strncmp(str, "$$$ exec p1 : [./filler", 23) == 0)
+		if (ft_strncmp(str, "$$$ exec p1 : [", 15) == 0)
 			e->letter = 'O';
-		else if (ft_strncmp(str, "$$$ exec p2 : [./filler", 23) == 0)
+		else if (ft_strncmp(str, "$$$ exec p2 : [", 15) == 0)
 			e->letter = 'X';
 		ft_get_vm_data(&str, e);
 	}
